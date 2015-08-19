@@ -1,0 +1,230 @@
+.charitable-form-field {
+    margin-bottom: 1em;
+
+    label {
+        display: block;
+        margin-bottom: 4px;
+    }
+
+    input, 
+    select, 
+    textarea {
+        width: 100%;
+    }
+
+    button,
+    input[type=submit],
+    input[type=button],
+    input[type=radio], 
+    input[type=checkbox] {
+        width: auto;
+        margin-left: 0;
+    }
+
+    &.charitable-form-field-checkbox {
+        label {
+            display: inline;
+            padding-left: 4px;
+        }
+    }
+
+    &.charitable-radio-list {
+        list-style: none;
+        margin-left: 0;
+        padding-left: 0;
+    
+        li {
+            list-style: none;
+            margin: 0 20px 0 0;
+            display: inline-block;
+            line-height: 1em;
+        }
+    }
+
+    &.charitable-form-field-multi-checkbox {
+        ul {
+            list-style: none;
+            margin-left: 0;
+            padding-left: 0;
+
+            li {
+                list-style: none;
+                margin-left: 0;
+                padding-left: 0;
+            }
+        }
+    }
+
+    .wp-media-buttons {
+        margin-bottom: 0.5em;
+    }
+
+    #wp-post_content-editor-container {
+        border: 1px solid #dedede;
+    }
+
+    a:not(.button) {
+        color: #f89d35;
+    }
+}
+
+.charitable-gateway-fields {
+    padding-top: 1em;
+}
+
+#charitable_field_cc_cvc {
+    max-width: 140px;
+
+    @include bp( 768 ) {
+        float: left;
+        width: 33%;
+    }
+}
+
+#charitable_field_cc_expiration {
+    @include bp( 768 ) {
+        float: left;
+        width: 63%;
+        margin-left: 4%;
+    }
+
+    > *:not(label) {
+        float: left;
+        width: 49%;
+        max-width: 140px;
+    }
+    
+    .year {
+        margin-left: 2%;
+    }
+}
+
+.charitable-form-fields {
+    .charitable-fieldset {  
+        margin: 0 0 1em;
+        padding: 2em;
+        border: 1px solid #ebebeb;  
+
+        a:not(.button) {
+            color: #f89d35;
+        }
+    }
+
+}
+
+.charitable-form-header {
+    margin: 0 0 1em;
+    font-size: 1.2em;
+    font-weight: bolder;
+}
+
+.charitable-repeatable-form-field-table {
+    margin-bottom: 1em;
+}
+
+#charitable-donation-form {
+    padding-top: 1em;
+
+    .donation-amounts {
+        @include clearfix;
+        margin: 0 0 1em;
+        padding: 0;
+        list-style: none;
+
+        .donation-amount {
+            float: left;
+            width: 49%;
+            margin: 0 2% 0.5em 0;
+            padding: 0.5em 1em;
+            border: 1px solid #ddd;
+            background-color: transparent;      
+            cursor: pointer;
+            list-style: none;
+
+            .amount {
+                font-weight: bolder;
+            }
+
+            &:nth-child( 2n+2 ) {
+                margin-right: 0;
+            }
+
+            input[type=radio] {
+                margin: 0 6px 0 0;
+                vertical-align: middle;
+            }
+        }
+
+        .donation-amount.selected {
+            color: #fff;
+            background-color: #f89d35;
+            border-color: #f89d35;
+        }
+    }
+}
+
+.widget_charitable_donate_widget {
+    #charitable-donation-form {
+        padding-top: 0;
+        .donation-amounts {
+            .donation-amount {
+                width: 100%;
+                margin-right: 0;
+            }
+        }
+    }
+}
+
+.charitable-hidden {
+    @include hidden();
+}
+
+.charitable-form-field-donor-fields {
+    .donor-address, 
+    .donor-contact-details {
+        margin-bottom: 0.5em;
+    }
+
+    .charitable-login-details {
+        padding-top: 1em;
+    }
+
+    .charitable-change-user-details {
+        margin-bottom: 0;
+        padding-bottom: 0;
+    }
+}
+
+#charitable-user-fields {
+    padding-top: 1em;
+    margin-top: 1em;
+    border-top: 1px solid #ddd;
+}
+
+#login-prompt {
+    margin-bottom: 4px;
+}
+
+.charitable-login-form {
+    padding: 1em;
+    margin-bottom: 1em;
+    border: 1px solid #ebebeb;
+    
+    label {
+        display: block;
+        margin-bottom: 4px;
+    }
+    
+    > p,
+    .login-username,
+    .login-password, 
+    .login-remember {   
+        margin-bottom: 1em;
+        padding-bottom: 0;
+    }
+
+    .login-submit {
+        margin-bottom: 0;
+        padding-bottom: 0;
+    }
+}

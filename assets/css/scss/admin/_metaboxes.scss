@@ -1,0 +1,110 @@
+@mixin charitable_metabox() {    
+    &.postbox {
+        min-width: 0;
+        padding: 0 0 24px 0;
+        margin: 0;
+        background-color: transparent;
+        border: none;
+        box-shadow: none;
+
+        .inside {
+            margin-top: 0;
+            padding: 0;
+        }
+    }
+
+    .postbox-title {
+        padding: 0 0 6px 0;
+    }   
+
+    .handlediv, 
+    .hndle {
+        display: none;
+    }
+
+    input,  
+    textarea {
+        padding: 14px 10px;
+        width: 100%;        
+    }
+
+    input[type=checkbox], 
+    input[type=radio], 
+    input[type=button],
+    input[type=submit] {
+        width: auto;
+    }
+
+    .charitable-metabox-title {
+        font-size: 14px;
+        margin-top: 0;
+        margin-bottom: 6px;
+    }
+    
+    .charitable-helper {        
+        display: block;
+        padding-top: 6px;
+        font-style: italic;
+    }
+
+    .charitable-metabox {
+
+        .charitable-metabox-wrap {
+            margin-bottom: 12px;    
+        }
+
+        .charitable-metabox-title {
+            margin-bottom: 12px;
+            padding: 4px 0 12px 0; 
+            border-bottom: 1px solid #e5e5e5;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 6px;
+            font-weight: bold;          
+        }
+
+        .widefat {
+            th {
+                font-size: 13px;
+            }
+        }
+    }
+
+    .charitable-checkbox-wrap {
+        label {
+            display: inline-block;
+        }
+    }   
+
+    .table-header {
+        background: #f5f5f5;
+
+        label {
+            margin-bottom: 0;
+        }
+    }
+}
+
+.charitable-metabox {
+    @include charitable_metabox();    
+}
+
+.charitable-metabox-block {
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #dedede;
+}
+
+body.post-type-donation,
+body.post-type-campaign {
+    .postbox-container .empty-container {
+        border: none;
+        height: auto;
+    }
+}
+
+@import 'metaboxes-campaign';
+
+@import 'metaboxes-donation';

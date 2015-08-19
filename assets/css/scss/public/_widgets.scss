@@ -1,0 +1,70 @@
+.widget.widget_charitable_campaigns_widget {
+    .campaigns {
+        margin: 0 0 1em 0;
+        padding: 0;
+        list-style: none;
+    }
+
+    .campaign {
+        list-style: none;
+        padding: 1em 0;
+        border-bottom: {
+            color: #e6e6e6;
+            style: solid;
+            width: 1px;
+        }
+
+        .wp-post-image {
+            padding: 0;
+            margin: 0 0 0.5em 0;
+        }
+
+        .campaign-title {
+            padding: 0;
+            margin: 0 0 0.5em 0;
+            font-size: inherit;
+            font-weight: bolder;
+        }
+
+        .campaign-time-left {
+            font-weight: normal;
+        }
+    }    
+}
+
+.widget.widget_charitable_donors_widget {
+    .donors-list {
+        margin: 0 0 1em 0;
+        padding: 0;
+        list-style: none;
+    }
+
+    .donor {
+        @include clearfix;
+        list-style: none;
+        padding: 1em 0;
+        border-bottom: {
+            color: #e6e6e6;
+            style: solid;
+            width: 1px;
+        }
+
+        .avatar {
+            margin: 0;
+        }
+
+        .donor-name {
+            font-weight: bold;
+        }
+
+        .donor-name, 
+        .donor-location, 
+        .donor-donation-amount {
+            margin: 0.5em 0 0 0;
+        }
+
+        > *:first-child {
+            margin-top: 0;
+        }
+    }
+}

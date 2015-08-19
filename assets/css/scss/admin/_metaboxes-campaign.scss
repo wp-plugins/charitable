@@ -1,0 +1,203 @@
+.post-type-campaign .postbox-title {
+    border-bottom: 1px solid #eee;
+}
+
+#campaign-title, 
+#campaign-goal, 
+#campaign-end-date, 
+#campaign-description {
+    @include charitable_metabox();
+}
+
+/* --- Advanced Metabox --- */
+
+#charitable-campaign-advanced-metabox.ui-tabs {
+    @include clearfix;
+    clear: both;
+    padding: 0;
+    background-color: #f5f5f5;
+    border-radius: 4px;
+    border: 1px solid #dedede;
+    font-family: "Open Sans", sans-serif;
+    font-size: 13px;
+
+    .wp-editor-expand #wp-content-editor-tools {
+        background-color: transparent;
+    }
+
+    .charitable-tabs.ui-tabs-nav {
+        float: left;
+        width: 20%;
+        margin: 0;
+        padding: 0;
+        border: none;
+        -webkit-border-radius: 0;
+        -moz-border-radius: 0;
+        border-radius: 0;
+        background: none;
+
+        li {
+            position: relative;
+            top: 0;
+            display: block;
+            float: none;
+            background: none;           
+            margin: 0;
+            border: 0;  
+            border-radius: 0;
+            white-space: normal;                    
+        }
+
+        a {
+            display: block;
+            float: none;
+            padding: 10px;
+            color: #747474;
+            text-decoration: none;
+        }
+
+        li.ui-tabs-active {
+            z-index: 2;
+            margin-right: -2px;
+            border-top: 1px solid #dedede;
+            border-bottom: 1px solid #dedede !important;
+            background-color: #fff;         
+        }       
+
+        li:first-child {
+            border-radius: 4px 0 0 0;
+            border-top-color: transparent;
+        }
+
+        li:last-child {
+            margin-bottom: 10px;
+            border-bottom-color: transparent;
+        }
+    }
+
+    .ui-tabs-panel {
+        box-sizing: border-box;    
+        float: right;
+        width: 80%;     
+        padding: 20px;
+        margin: 0;
+        border-left: 1px solid #dedede;
+        border-top: 0;
+        border-radius: 0 4px 4px 0;
+        background-color: #fff;
+
+        .inside {
+            padding: 0;
+            margin: 0;
+        }
+    }
+
+    #wp-content-editor-tools {
+        padding-top: 0;
+    }
+}
+
+/* --- Suggested Donations --- */
+
+#charitable-campaign-suggested-donations {
+    .amount-col {
+        width: 100px;
+        min-width: 35%;
+    }
+    
+    .description-col {
+
+    }
+}
+
+/* --- Benefactors --- */
+
+.charitable-benefactor-wrap {
+    padding: 0 10px 10px;
+    margin-top: 10px;
+    border: 1px solid #ddd;
+    background: #f5f5f5;
+
+    select {
+        width: 100%;
+    }
+}
+
+.charitable-benefactor-contribution-amount {
+    margin-bottom: 10px;
+
+    .contribution-amount {
+        margin-bottom: 10px;
+        font-size: 16px;
+    }
+
+    @include bp(42.5em) {
+        border: 1px solid #ddd;
+        background-color: #fff;
+
+        .contribution-amount {          
+            width: auto;
+            min-width: 220px;
+            margin: 1px;
+            border: none;
+            box-shadow: none;
+        }
+
+        .contribution-type {
+            float: right;
+            margin: 10px;       
+            width: auto;
+        }
+
+        input:focus, 
+        select:focus {
+            box-shadow: none;
+        }
+    }
+}
+
+.charitable-benefactor-date-wrap {
+    margin-top: 10px;
+
+    label {
+        float: left; 
+        width: 49%;     
+    }   
+
+    label:nth-child(2n+2) {
+        margin-left: 2%;
+    }
+
+    input {
+        margin: 1em 0;
+        font-weight: normal;
+    }
+}
+
+/* --- Top campaign meta boxes --- */
+
+#campaign-top-sortables {
+    padding-top: 20px;
+    
+    #campaign-goal, 
+    #campaign-end-date {
+        float: left;
+        width: 48%;
+    }
+
+    #campaign-goal {
+        padding-right: 4%;
+    }
+
+    #campaign-description {
+        clear: both;
+    }
+
+    @include bp(37.5em, false) {
+        #campaign-goal, 
+        #campaign-end-date {
+            width: 100%;
+            padding: 0 0 24px;
+        }
+    }
+}
