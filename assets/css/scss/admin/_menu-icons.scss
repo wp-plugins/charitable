@@ -1,0 +1,54 @@
+@mixin icon-base() {
+    font-family: charitable !important;
+}
+
+@mixin donation-icon() {
+    @include icon-base;
+    content: "\e600";   
+}
+
+@mixin charitable-icon() {
+    @include icon-base;
+    content: "\e601";   
+}
+
+@mixin campaign-creator-icon() {    
+    @include icon-base;
+    content: "\e602";   
+}
+
+#adminmenu {
+    .menu-icon-campaign div.wp-menu-image:before {
+        @include charitable-icon;
+    }
+}
+
+#available-widgets {
+    [class*="charitable_campaigns_widget"] .widget-title:before {
+        @include charitable-icon;
+    }    
+
+    [class*="charitable_donate_widget"] .widget-title:before {
+        @include donation-icon;
+    }
+
+    [class*="campaign_creator_widget"] .widget-title:before {
+        @include campaign-creator-icon;    
+    }
+
+    [class*="charitable_donors_widget"] .widget-title:before {
+        content: "\f307";
+        top: -4px;  
+    }
+
+    [class*="charitable_campaign_terms_widget"] .widget-title:before {
+        content: "\f318";
+        top: -4px;       
+    }
+}
+
+.toplevel_page_charitable {
+    div.wp-menu-image:before {
+        @include charitable-icon;
+    }
+}

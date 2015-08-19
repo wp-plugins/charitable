@@ -1,0 +1,93 @@
+.campaign-loop.campaign-list, 
+.campaign-loop.campaign-grid {
+    margin: 0 0 1em 0;
+    padding: 0;
+    list-style: none;        
+
+    .campaign.hentry {     
+        position: relative;   
+        padding: 0;
+        margin: 0 0 1em 0;
+        list-style: none;
+        box-shadow: none;
+        box-sizing: border-box;
+
+        h3 {
+            margin-top: 0;
+            text-decoration: none;
+        }
+    } 
+
+    .wp-post-image {
+        padding-bottom: 1em;            
+    }
+
+    .campaign-progress-bar {
+        margin-bottom: 0.5em;
+    }
+
+    .campaign-donation-stats {
+        margin-bottom: 1em;
+
+        .amount, 
+        .goal-amount {
+            font-weight: bolder;
+        }
+    }
+
+    .campaign-donation {
+        .button {
+            display: inline-block;
+        }
+    }
+}
+
+.campaign-loop.campaign-list {
+    .campaign.hentry {
+        padding: 0 0 1em 0;
+        margin: 0 0 1em 0;
+        border-bottom: 1px solid #e6e6e6;
+    }    
+}
+
+.campaign-loop.campaign-grid {
+    margin: 0 0 1em 0;
+    padding: 0;
+    @include clearfix;
+
+    .wp-post-image {
+        max-width: 100%;
+        width: 100%;
+    }
+
+    .campaign.hentry {
+        list-style: none;
+        float: left;
+        margin: 0 2% 1em 0;        
+        padding: 1em;
+        border: 1px solid #e6e6e6;
+    }    
+
+    .campaign-donation {
+        text-align: center;
+    }
+}
+
+.campaign-grid-2 {
+    .campaign.hentry {
+        width: 49%;
+    }
+    .campaign.hentry:nth-child(2n+2) {
+        margin-right: 0;
+    }
+}
+    
+.campaign-grid-3 {
+    .campaign.hentry {
+        width: 32%;
+    }
+    .campaign.hentry:nth-child(3n+3) {
+        margin-right: 0;
+    }    
+}
+

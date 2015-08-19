@@ -1,0 +1,29 @@
+// Simple clearfix. 
+@mixin clearfix {
+	*zoom: 1;
+	&:before, 
+	&:after {
+		content: " ";
+		display: table;
+	}
+	&:after {
+		clear: both;
+	}	
+}
+
+// Visually hides an element.
+@mixin hidden {
+	display: none !important;
+	visibility: hidden;	
+}
+
+// Easy media queries for breakpoints.
+@mixin bp($point, $min : true) {
+	$em : #{$point / 16}em;
+	@if ( $min ) {
+		@media (min-width: $em) { @content };
+	}
+	@else {
+		@media (max-width: $em) { @content };
+	}
+}
