@@ -1,10 +1,10 @@
 === Charitable ===
-Contributors: WPCharitable
+Contributors: WPCharitable, ericdaams
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=paypal%40164a%2ecom
 Tags: donations, donate, donation plugin, fundraising, fundraising plugin, non-profit, non-profits, charity, churches, commerce, crowdfunding, paypal donations, paypal, stripe, stripe donations, campaigns, gifts, giving, wordpress fundraising, wordpress donations, wordpress donation plugin
 Requires at least: 4.1
 Tested up to: 4.3
-Stable tag: 1.0.0
+Stable tag: 1.0.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -12,7 +12,7 @@ Charitable is a powerful, extendable fundraising plugin created to help non-prof
 
 == Description ==
 
-[Charitable](http://wpcharitable.com/) is the WordPress fundraising alternative for non-profits, built to help non-profits raise money on their own website. 
+[Charitable](https://wpcharitable.com/) is the WordPress fundraising alternative for non-profits, built to help non-profits raise money on their own website. 
 
 You can accept PayPal or offline donations right out of the box, with support for other gateways available as extensions.
 
@@ -48,11 +48,11 @@ One size does *not* fit all. That's why we made Charitable an extendable platfor
 
 Looking for more? 
 
-[View all extensions](http://wpcharitable.com). 
+[View all extensions](https://wpcharitable.com/extensions). 
 
 = Get involved =
 
-Join the community on [WP Charitable](http://wpcharitable.com). 
+Join the community on [WP Charitable](https://wpcharitable.com). 
 
 Developers can contribute to Charitable on our [Github repository](https://github.com/Charitable/Charitable).
 
@@ -66,7 +66,7 @@ Developers can contribute to Charitable on our [Github repository](https://githu
 
 = How do I add a grid of campaigns to my page? = 
 
-Easy. Just add `[campaigns]` into your page content. [Read more](http://wpcharitable.com/documentation/the-campaigns-shortcode/).
+Easy. Just add `[campaigns]` into your page content. [Read more](https://wpcharitable.com/documentation/the-campaigns-shortcode/).
 
 = Does Charitable support recurring donations? =
 
@@ -82,6 +82,13 @@ Support for recurring donations will be added as an extension, but is not yet av
 6. Setting up Charitable: The Email settings area. 
 
 == Changelog ==
+
+= 1.0.2 =
+* Fix: Added missing file into the repo. 
+
+= 1.0.1 =
+* Improvement: Moved the user dashboard functionality into the core of the plugin, so that it is always available.
+* Fix: The installation routine now flushes permalinks correctly -- no more "Page not Found" problems!
 
 = 1.0.0 =
 * Initial release

@@ -5,7 +5,7 @@
  * @package		Charitable/Classes/Charitable_Benefactor
  * @version 	1.0.0
  * @author 		Eric Daams
- * @copyright 	Copyright (c) 2014, Studio 164a
+ * @copyright 	Copyright (c) 2015, Studio 164a
  * @license     http://opensource.org/licenses/gpl-2.0.php GNU Public License  
  */
 
@@ -52,7 +52,7 @@ abstract class Charitable_Benefactor {
 	 * @static
 	 * @since   1.0.0
 	 */
-	public function get_object( $benefactor, $extension ) {
+	public static function get_object( $benefactor, $extension ) {
 		$class = apply_filters( 'charitable_benefactor_class_' . $extension, false );
 
 		if ( ! class_exists( $class ) ) {

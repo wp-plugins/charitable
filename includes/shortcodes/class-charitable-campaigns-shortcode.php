@@ -50,7 +50,7 @@ class Charitable_Campaigns_Shortcode {
         /* Fall back to default Charitable_Template if no template returned or if template was not object of 'Charitable_Template' class. */
         if ( ! is_object( $template ) || ! is_a( $template, 'Charitable_Template' ) ) {
             $template = new Charitable_Template( 'campaign-loop.php', false );
-        }       
+        }
 
         if ( ! $template->template_file_exists() ) {
             return false;
@@ -81,8 +81,13 @@ class Charitable_Campaigns_Shortcode {
      */
     public static function get_campaigns( $args ) {
         $query_args = array(
-            'posts_per_page' => $args[ 'number' ]            
+            'posts_per_page' => $args[ 'number' ]
         );
+
+        /* Pagination */
+        if ( ! empty( $args[ 'paged' ] ) ) {
+            $query_args[ 'paged' ] = $args[ 'paged' ];
+        }
 
         /* Set category constraint */
         if ( ! empty( $args[ 'category' ] ) ) {

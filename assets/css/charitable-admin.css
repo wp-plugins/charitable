@@ -131,6 +131,10 @@
   font-weight: bold; }
 .charitable-metabox .charitable-metabox .widefat th {
   font-size: 13px; }
+.charitable-metabox .charitable-metabox .widefat tbody th {
+  width: 33%;
+  border-right: 1px solid #e1e1e1;
+  background: #f5f5f5; }
 .charitable-metabox .charitable-checkbox-wrap label {
   display: inline-block; }
 .charitable-metabox .table-header {
@@ -246,6 +250,13 @@ body.post-type-campaign .postbox-container .empty-container {
 #campaign-end-date .charitable-metabox .widefat th,
 #campaign-description .charitable-metabox .widefat th {
   font-size: 13px; }
+#campaign-title .charitable-metabox .widefat tbody th,
+#campaign-goal .charitable-metabox .widefat tbody th,
+#campaign-end-date .charitable-metabox .widefat tbody th,
+#campaign-description .charitable-metabox .widefat tbody th {
+  width: 33%;
+  border-right: 1px solid #e1e1e1;
+  background: #f5f5f5; }
 #campaign-title .charitable-checkbox-wrap label,
 #campaign-goal .charitable-checkbox-wrap label,
 #campaign-end-date .charitable-checkbox-wrap label,

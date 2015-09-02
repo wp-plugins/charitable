@@ -131,6 +131,20 @@ CHARITABLE.SanitizeURL = function(input) {
 	}
 };
 
+
+/**
+ * Set up Lean Modal
+ */
+ CHARITABLE.Modal = {
+ 	init : function() {
+ 		if ( jQuery.fn.leanModal ) {
+ 			jQuery('[data-trigger-modal]').leanModal({
+		        closeButton : ".modal-close"
+		    });
+ 		} 		
+ 	}
+ }
+
 /**
  * Payment method selection
  */
@@ -171,5 +185,7 @@ CHARITABLE.SanitizeURL = function(input) {
 		CHARITABLE.AJAXDonate.init();		
 
 		CHARITABLE.PaymentMethodSelection.init();
+
+		CHARITABLE.Modal.init();
 	});
 })();

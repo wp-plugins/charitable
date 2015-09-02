@@ -5,7 +5,7 @@
  * @version		1.0.0
  * @package		Charitable/Classes/Charitable_Campaigns
  * @author 		Eric Daams
- * @copyright 	Copyright (c) 2014, Studio 164a
+ * @copyright 	Copyright (c) 2015, Studio 164a
  * @license     http://opensource.org/licenses/gpl-2.0.php GNU Public License  
  */
 
@@ -81,7 +81,7 @@ class Charitable_Campaigns {
 	public static function ordered_by_amount( $args = array() ) {
 		global $wpdb;
 
-		/* Set up filters to order by amount */
+		/* Set up filters to order by amount */		
 		add_filter( 'posts_join_paged', array( 'Charitable_Campaigns', 'join_campaign_donations_table' ) );
 		add_filter( 'posts_groupby', array( 'Charitable_Campaigns', 'groupby_campaign_id' ) );
 		add_filter( 'posts_orderby', array( 'Charitable_Campaigns', 'orderby_campaign_donation_amount' ) );
@@ -89,8 +89,9 @@ class Charitable_Campaigns {
 		$query = Charitable_Campaigns::query( $args );
 
 		/* Clean up filters */
-		remove_filter( 'posts_orderby', array( 'Charitable_Campaigns', 'join_campaign_donations_table' ) );
-		remove_filter( 'posts_join_paged', array( 'Charitable_Campaigns', 'orderby_campaign_donation_amount' ) );
+		remove_filter( 'posts_join_paged', array( 'Charitable_Campaigns', 'join_campaign_donations_table' ) );
+		remove_filter( 'posts_groupby', array( 'Charitable_Campaigns', 'groupby_campaign_id' ) );
+		remove_filter( 'posts_orderby', array( 'Charitable_Campaigns', 'orderby_campaign_donation_amount' ) );
 
 		return $query;
 	}

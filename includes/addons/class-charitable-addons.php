@@ -5,7 +5,7 @@
  * @package		Charitable/Classes/Charitable_Addons
  * @version 	1.0.0
  * @author 		Eric Daams
- * @copyright 	Copyright (c) 2014, Studio 164a
+ * @copyright 	Copyright (c) 2015, Studio 164a
  * @license     http://opensource.org/licenses/gpl-2.0.php GNU Public License  
  */
 
@@ -72,7 +72,7 @@ class Charitable_Addons {
 
 		/* If we cannot read the file, bounce back with an error. */
 		if ( ! file_exists( $filepath ) || ! is_readable( $filepath ) ) {
-			_doing_it_wrong( __METHOD__, sprintf( 'File %s does not exist or is not readable', $filepath ), '1.0.0' );
+			// _doing_it_wrong( __METHOD__, sprintf( 'File %s does not exist or is not readable', $filepath ), '1.0.0' );
 			return;
 		}
 
@@ -104,7 +104,14 @@ class Charitable_Addons {
 
 		foreach ( $active_addons as $addon ) {
 
-			require_once( $this->get_addon_filepath( $addon ) );
+			$filepath = $this->get_addon_filepath( $addon );
+
+			if ( ! file_exists( $filepath ) || ! is_readable( $filepath ) ) {
+				// _doing_it_wrong( __METHOD__, sprintf( 'File %s does not exist or is not readable', $filepath ), '1.0.0' );
+				continue;
+			}
+
+			require_once( $filepath );
 
 			/* Call the Addon's load method */
 			call_user_func( array( $this->get_addon_class( $addon ), 'load' ) );
