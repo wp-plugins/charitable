@@ -5,7 +5,7 @@
  * @version		1.0.0
  * @package		Charitable/Classes/Charitable_Request
  * @author 		Eric Daams
- * @copyright 	Copyright (c) 2014, Studio 164a
+ * @copyright 	Copyright (c) 2015, Studio 164a
  * @license     http://opensource.org/licenses/gpl-2.0.php GNU Public License  
  */
 

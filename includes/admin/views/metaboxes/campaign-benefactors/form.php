@@ -4,7 +4,7 @@
  *
  * @since 		1.0.0
  * @author 		Eric Daams
- * @copyright 	Copyright (c) 2014, Studio 164a 
+ * @copyright 	Copyright (c) 2015, Studio 164a 
  */
 
 $benefactor = isset( $view_args[ 'benefactor' ] ) 	? $view_args[ 'benefactor' ] 	: null;

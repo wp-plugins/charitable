@@ -23,8 +23,8 @@ wp_enqueue_style( 'lean-modal-css' );
 </div>
 <script type="text/javascript">
 ( function( $ ) {
-    $('[data-trigger-modal]').leanModal({
-        closeButton : ".modal-close"
-    });
+    // $('[data-trigger-modal]').leanModal({
+    //     closeButton : ".modal-close"
+    // });
 })( jQuery );
 </script>

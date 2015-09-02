@@ -8,7 +8,7 @@
  * @package 	Charitable/Functions/Core
  * @version     1.0.0
  * @author 		Eric Daams
- * @copyright 	Copyright (c) 2014, Studio 164a
+ * @copyright 	Copyright (c) 2015, Studio 164a
  * @license     http://opensource.org/licenses/gpl-2.0.php GNU Public License  
  */
 
@@ -146,6 +146,16 @@ function charitable_get_session() {
  */
 function charitable_get_request() {
 	return charitable()->get_request();
+}
+
+/**
+ * Returns the Charitable_User_Dashboard object.
+ *
+ * @return 	Charitable_User_Dashboard
+ * @since 	1.0.0
+ */
+function charitable_get_user_dashboard() {
+	return charitable()->get_registered_object( 'Charitable_User_Dashboard' );
 }
 
 /**

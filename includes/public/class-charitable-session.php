@@ -6,7 +6,7 @@
  *
  * @package		Charitable
  * @subpackage	Charitable/Charitable Session
- * @copyright 	Copyright (c) 2014, Eric Daams	
+ * @copyright 	Copyright (c) 2015, Eric Daams	
  * @license     http://opensource.org/licenses/gpl-2.0.php GNU Public License
  * @since 		1.0.0
  */
