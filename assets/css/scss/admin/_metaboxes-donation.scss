@@ -1,0 +1,110 @@
+body.post-type-donation {
+    #post-body-content,
+    #titlediv, 
+    .page-title-action {
+        display: none;
+    }
+
+    .closed {
+        .inside {
+            display: block;
+        }
+    }
+}
+
+#donation-details {    
+
+    .charitable-metabox {
+        @include clearfix;
+    }
+
+    .postbox-title, 
+    .hndle {
+        display: none;
+    }
+
+    .inside {
+        margin: 0;
+        padding: 0;
+    }
+
+    #donor {
+        float: left;
+        padding: 20px 10px 40px 20px;
+        width: 300px;
+        max-width: 67%;
+    }
+
+    .donor-name {
+        font-weight: normal;
+    }
+
+    h3 {
+        font-size: 18px;
+        padding: 0 0 6px;
+    }
+
+    #donation-summary {
+        float: right;
+        padding: 20px 20px 40px 0;
+        max-width: 33%;
+        text-align: right;
+    }
+
+    .donation-date,
+    .donation-status {
+        display: block;
+        margin-bottom: 6px;
+    }
+
+    .donation-status .status {
+        font-weight: bolder;
+    }
+
+    table#details {
+        float: left;
+        width: 100%;
+        border-spacing: 0;
+
+        thead th {
+            padding: 0 0 10px;
+        }
+
+        .col-campaign-name {
+            padding-left: 20px;
+            text-align: left;            
+        }
+        
+        .col-campaign-donation-amount {
+            padding-right: 20px;
+            text-align: right;
+        }
+
+        tbody td {
+            padding: 40px 0;
+            border-top: 1px solid #e5e5e5;
+        }
+
+        tbody tr:last-child td {
+            border-bottom: 1px solid #e5e5e5;
+        }
+
+        .campaign-name {
+            padding-left: 20px;
+            font-size: 18px;
+        }
+
+        .campaign-donation-amount {
+            padding-right: 20px;
+            font-size: 16px;
+            text-align: right;
+        }
+
+        tfoot td, 
+        tfoot th {
+            padding: 10px 20px 10px 0;
+            background-color: #f8f8f8;
+            text-align: right;
+        }
+    }
+}

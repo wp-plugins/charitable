@@ -1,0 +1,89 @@
+.campaign-description {
+    margin-bottom: 1em;    
+}
+
+.single-campaign {
+    .campaign-description {
+        font-size: 1.5em;
+        font-weight: bolder;
+    }
+
+    &.campaign-widget .campaign-description {
+        font-size: 1em;
+        font-weight: normal;
+    }
+}
+
+.campaign-summary {
+    @include clearfix();    
+    padding: 0 1em;
+    margin-bottom: 1em;    
+    border: 1px solid #e6e6e6;
+
+    .campaign-summary-item {
+    	float: left;
+        width: 50%;
+        padding: 1em 0;        
+        border-bottom: 1px solid #e6e6e6;
+    }
+
+    .campaign-raised .amount, 
+    .campaign-figures .amount {
+        display: block;
+        font-size: 1.5em;
+        font-weight: bolder;
+        color: #f89d35;
+    }
+
+    .campaign-donors {
+        clear: left;        
+    }
+
+    .donors-count, 
+    .time-left {
+        font-weight: bolder;
+        color: #f89d35;
+    }
+
+    .campaign-donation {
+        float: left;
+        width: 100%;
+        padding: 1em 0;
+        text-align: center;
+
+        .donate-button {
+            display: inline-block;    
+        }
+    }
+}
+
+.campaign-is-endless,
+.campaign-has-no-goal {
+	.campaign-summary-item {
+		width: 100%;
+		text-align: center;
+	}
+}
+
+/* Campaign Progress Bar */
+
+.campaign-progress-bar {
+    width: 100%;
+    height: 10px;
+    background-color: #e6e6e6;
+
+    .bar {
+        display: block;
+        height: 100%;
+        background-color: #f89d35;
+    }   
+}
+
+/* Donate Button */
+
+.donate-button {
+    padding: 6px 24px;
+    border: none;
+    background-color: #f89d35;
+    color: #fff;   
+}

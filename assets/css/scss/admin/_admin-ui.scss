@@ -1,0 +1,29 @@
+/* 
+ * Clearfix helper class.
+ * Credit: h5bp.com/q
+ */
+.cf {
+	@include clearfix;
+}
+
+/* 
+ * Media block
+ *
+ * Credit: http://www.stubbornella.org/content/2010/06/25/the-media-object-saves-hundreds-of-lines-of-code/
+ */
+.charitable-media-block {
+	overflow: hidden;
+
+	.charitable-media-image {
+		float: left; 
+		margin-right: 12px;
+
+		img {
+			display: block;
+		}
+	}
+
+	.charitable-media-body {
+		overflow: hidden;		
+	}
+}

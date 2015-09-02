@@ -1,0 +1,171 @@
+.charitable-settings-field {
+    padding: 7px 10px; 
+    width: 300px;
+    font-size: 16px; 
+    line-height: 1.5em;
+
+    &.short {
+        width: 100px;
+    }
+
+    &.wide {
+        width: 100%;
+    }
+}
+
+select.charitable-settings-field {
+    width: auto;
+}
+
+.charitable-settings-object {    
+    max-width: 860px;
+    padding: 10px 20px;
+    margin-bottom: 4px;
+    border: 1px solid #e1e1e1;
+    background-color: #fff;
+
+    h4 {    
+        float: left;
+        margin: 0;
+        line-height: 28px;
+    }
+
+    span.actions {
+        float: right;
+
+        a {
+            margin-left: 10px;
+        }
+    }
+}
+
+.charitable-gateway {
+    .default-gateway,
+    .make-default-gateway { 
+        margin-left: 20px;
+        font-size: 12px;
+        line-height: 28px;
+    }
+
+    .default-gateway {
+        color: #f89d35;
+    } 
+
+    .make-default-gateway {
+        color: #777;
+    }
+}
+
+.charitable-licensed-product {
+    h4 {
+        width: 230px;
+        margin-right: 20px;
+        line-height: 40px;
+    }
+
+    .charitable-settings-field {
+        float: left;        
+        width: 100%;
+
+        @include bp( 1090 ) {
+            width: 312px;
+            margin-right: 20px;
+        }   
+    }
+
+    .license-meta {
+        font-size: 12px;
+        line-height: 40px;
+    }
+
+    .license-active {
+        float: left;
+    }
+
+    .valid-license {
+        color: #f89d35;
+        font-weight: bold;
+    }
+
+    .license-deactivation {
+        float: left;
+        margin: 6px 0;        
+    }
+
+    .license-invalid {
+        color: #f89d35;
+    }
+
+    .license-expiration-date {
+        float: right;
+        margin-left: 10px;
+    }
+}
+
+.charitable-help {
+    display: block;
+    margin-top: 4px;
+    font-size: 13px;
+    line-height: 21px;
+    font-style: italic;    
+    color: #777;
+} 
+
+.form-table .charitable-help p {
+    font-size: 13px;
+    line-height: 21px;
+}
+
+.form-table td.charitable-fullwidth {
+    padding: 15px 0;
+}
+
+.charitable-shortcode-options {
+    ul {
+        list-style: disc;
+        margin-left: 16px;
+        font-style: normal;
+    }
+
+    li {
+        margin-bottom: 2px;
+    }
+}
+
+.charitable_page_charitable-settings {
+    .form-table {
+        th {    
+            @include bp( 48em ) {
+                min-width: 200px;
+            }           
+
+            label {
+                font-size: 13px;
+            }   
+        }   
+
+        td {
+            select {
+                max-width: 400px;
+            }
+        }   
+    }
+}
+
+.charitable-radio-list {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+
+    li {
+        display: inline-block;
+        margin-right: 20px;
+    }
+}
+
+
+.charitable-checkbox-list {
+    width: auto;
+    margin: 0;
+    padding: 0;
+}
