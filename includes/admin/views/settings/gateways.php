@@ -16,23 +16,23 @@ if ( count( $gateways ) ) :
     foreach ( $gateways as $gateway ) :   
 
         $gateway    = new $gateway;      
-        $is_active  = $helper->is_active_gateway( $gateway::ID );
+        $is_active  = $helper->is_active_gateway( $gateway::get_gateway_id() );
         $action_url = esc_url( add_query_arg( array(
             'charitable_action' => $is_active ? 'disable_gateway' : 'enable_gateway',
-            'gateway_id'        => $gateway::ID, 
+            'gateway_id'        => $gateway::get_gateway_id(), 
             '_nonce'            => wp_create_nonce( 'gateway' )
         ), admin_url( 'admin.php?page=charitable-settings&tab=gateways' ) ) );
 
         $make_default_url = esc_url( add_query_arg( array(
             'charitable_action' => 'make_default_gateway',
-            'gateway_id'        => $gateway::ID, 
+            'gateway_id'        => $gateway::get_gateway_id(), 
             '_nonce'            => wp_create_nonce( 'gateway' )
         ), admin_url( 'admin.php?page=charitable-settings&tab=gateways' ) ) );
 
         ?>
         <div class="charitable-settings-object charitable-gateway cf">
             <h4><?php echo $gateway->get_name() ?></h4>
-            <?php if ( $gateway::ID == $default ) : ?>
+            <?php if ( $gateway::get_gateway_id() == $default ) : ?>
 
                 <span class="default-gateway"><?php _e( 'Default gateway', 'charitable' ) ?></span>
 
@@ -44,7 +44,7 @@ if ( count( $gateways ) ) :
             <span class="actions">
                 <?php if ( $is_active ) : 
                     $settings_url = esc_url( add_query_arg( array(
-                        'group' => 'gateways_' . $gateway::ID
+                        'group' => 'gateways_' . $gateway::get_gateway_id()
                     ), admin_url( 'admin.php?page=charitable-settings&tab=gateways' ) ) );
                     ?>
 

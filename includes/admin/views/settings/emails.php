@@ -14,10 +14,10 @@ if ( count( $emails ) ) :
 ?>
     <?php foreach ( $emails as $email ) : 
         $email      = new $email;
-        $is_enabled = $helper->is_enabled_email( $email::ID );
+        $is_enabled = $helper->is_enabled_email( $email->get_email_id() );
         $action_url = esc_url( add_query_arg( array(
             'charitable_action' => $is_enabled ? 'disable_email' : 'enable_email',
-            'email_id' => $email::ID, 
+            'email_id' => $email->get_email_id(), 
             '_nonce' => wp_create_nonce( 'email' )
         ), admin_url( 'admin.php?page=charitable-settings&tab=emails' ) ) );
         ?>
@@ -26,7 +26,7 @@ if ( count( $emails ) ) :
             <span class="actions">
                 <?php if ( $is_enabled ) : 
                     $settings_url = esc_url( add_query_arg( array(
-                        'group' => 'emails_' . $email::ID
+                        'group' => 'emails_' . $email->get_email_id()
                     ), admin_url( 'admin.php?page=charitable-settings&tab=emails' ) ) );
                     ?>
                     <a href="<?php echo $settings_url ?>" class="button button-primary"><?php _e( 'Email Settings', 'charitable' ) ?></a>

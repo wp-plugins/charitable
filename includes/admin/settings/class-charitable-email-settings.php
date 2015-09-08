@@ -90,7 +90,7 @@ final class Charitable_Email_Settings extends Charitable_Start_Object {
      */
     public function add_individual_email_fields( $fields ) {
         foreach ( charitable_get_helper( 'emails' )->get_available_emails() as $email ) {
-            $fields[ 'emails_' . $email::ID ] = apply_filters( 'charitable_settings_fields_emails_email', array(), new $email );
+            $fields[ 'emails_' . $email::get_email_id() ] = apply_filters( 'charitable_settings_fields_emails_email', array(), new $email );
         }
 
         return $fields;

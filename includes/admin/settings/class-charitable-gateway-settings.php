@@ -80,7 +80,7 @@ final class Charitable_Gateway_Settings extends Charitable_Start_Object {
                 continue;
             }
 
-            $fields[ 'gateways_' . $gateway::ID ] = apply_filters( 'charitable_settings_fields_gateways_gateway', array(), new $gateway );
+            $fields[ 'gateways_' . $gateway::get_gateway_id() ] = apply_filters( 'charitable_settings_fields_gateways_gateway', array(), new $gateway );
         }
 
         return $fields;
