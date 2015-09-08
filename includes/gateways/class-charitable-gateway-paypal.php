@@ -509,6 +509,18 @@ class Charitable_Gateway_Paypal extends Charitable_Gateway {
 
         return apply_filters( 'charitable_paypal_uri', $paypal_uri );
     }
+
+    /**
+     * Returns the current gateway's ID.  
+     *
+     * @return  string
+     * @access  public
+     * @static
+     * @since   1.0.3
+     */
+    public static function get_gateway_id() {
+        return self::ID;
+    }
 }
 
 endif; // End class_exists check

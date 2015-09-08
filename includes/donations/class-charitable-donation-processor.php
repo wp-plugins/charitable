@@ -570,7 +570,6 @@ class Charitable_Donation_Processor {
             'post_date'     => $this->get_donation_data_value( 'date', date('Y-m-d h:i:s') ),
             'post_title'    => sprintf( '%s &ndash; %s', $this->get_donor_name(), $this->get_campaign_names() )
         );                      
-
         $core_values[ 'post_date_gmt' ] = get_gmt_from_date( $core_values[ 'post_date' ] );
 
         return apply_filters( 'charitable_donation_values_core', $core_values, $this );
@@ -616,7 +615,7 @@ class Charitable_Donation_Processor {
      * @since   1.0.0
      */
     private function get_campaign_names() {
-        $campaigns = array_column( $this->get_campaign_donations_data(), 'campaign_name' );
+        $campaigns = wp_list_pluck( $this->get_campaign_donations_data(), 'campaign_name' );
         return implode( ', ', $campaigns );
     }
 

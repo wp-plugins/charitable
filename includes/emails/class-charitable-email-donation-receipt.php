@@ -46,6 +46,18 @@ class Charitable_Email_Donation_Receipt extends Charitable_Email {
     }
 
     /**
+     * Returns the current email's ID.  
+     *
+     * @return  string
+     * @access  public
+     * @static
+     * @since   1.0.3
+     */
+    public static function get_email_id() {
+        return self::ID;
+    }
+
+    /**
      * Static method that is fired right after a donation is completed, sending the donation receipt.
      *
      * @param   int     $donation_id

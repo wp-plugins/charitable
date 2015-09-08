@@ -102,7 +102,7 @@ abstract class Charitable_Gateway {
      * @since   1.0.0
      */
     public function get_settings() {
-        return charitable_get_option( 'gateways_' . $this->get_gateway_id(), array() );
+        return charitable_get_option( 'gateways_' . self::get_gateway_id(), array() );
     }
 
     /**
@@ -188,12 +188,12 @@ abstract class Charitable_Gateway {
      * Returns the current gateway's ID.  
      *
      * @return  string
-     * @access  protected
+     * @access  public
+     * @static
      * @since   1.0.0
      */
-    protected function get_gateway_id() {
-        $class = get_called_class();
-        return $class::ID;
+    public static function get_gateway_id() {
+        return static::ID;
     }
 
     /**
