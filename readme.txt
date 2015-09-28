@@ -12,7 +12,7 @@ Charitable is a powerful, extendable fundraising plugin created to help non-prof
 
 == Description ==
 
-[Charitable](https://wpcharitable.com?utm_campaign=readme&utm_medium=description_tab&utm_content=intro) is the WordPress fundraising alternative for non-profits, built to help non-profits raise money on their own website. 
+**[Charitable](https://wpcharitable.com?utm_campaign=readme&utm_medium=description_tab&utm_content=intro)** is the WordPress fundraising alternative for non-profits, built to help non-profits raise money on their own website. 
 
 You can accept PayPal or offline donations right out of the box, with support for other gateways available as [extensions](https://wpcharitable.com/extensions?utm_campaign=readme&utm_medium=description_tab&utm_content=intro).
 
@@ -30,9 +30,9 @@ Install, activate and create your first fundraising campaign in less than 5 minu
 
 = Accept credit card donations = 
 
-By coupling Charitable with our [Stripe extension](https://wpcharitable.com/extensions/charitable-stripe?utm_campaign=readme&utm_medium=description_tab&utm_content=credit-card-donations), you can accept credit card donations directly on your website. Improve your donor conversion rates by keeping them on your website instead of redirecting them to PayPal.
+By coupling Charitable with our **[Stripe extension](https://wpcharitable.com/extensions/charitable-stripe?utm_campaign=readme&utm_medium=description_tab&utm_content=credit-card-donations)**, you can accept credit card donations directly on your website. Improve your donor conversion rates by keeping them on your website instead of redirecting them to PayPal.
 
-Want to use a different payment gateway? [https://wpcharitable.com/support?utm_campaign=readme&utm_medium=description_tab&utm_content=credit-card-donations](Let us know). 
+Want to use a different payment gateway? [Let us know](https://wpcharitable.com/support?utm_campaign=readme&utm_medium=description_tab&utm_content=credit-card-donations). 
 
 = Skip the transaction fees = 
 
