@@ -15,8 +15,7 @@ $form 			= $view_args[ 'form' ];
 $field 			= $view_args[ 'field' ];
 $classes 		= $view_args[ 'classes' ];
 $is_required 	= isset( $field[ 'required' ] ) ? $field[ 'required' ] : false;
-$value			= isset( $field[ 'value' ] ) ? esc_textarea( $field[ 'value' ] ) : '';
-
+$value			= isset( $field[ 'value' ] ) ? $field[ 'value' ] : '';
 $editor_args 	= isset( $field[ 'editor' ] ) ? $field[ 'editor' ] : array();
 $default_editor_args = array(
 	'media_buttons' => true,

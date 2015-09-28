@@ -207,6 +207,10 @@ abstract class Charitable_Query implements Iterator {
      * @since   1.0.0
      */
     public function limit() {
+        if ( $this->show_all() ) {
+            return "";
+        }
+
         return apply_filters( 'charitable_query_limit', "LIMIT {$this->get( 'number', 20 )}", $this );
     }
 
@@ -218,6 +222,10 @@ abstract class Charitable_Query implements Iterator {
      * @since   1.0.0
      */
     public function offset() {
+        if ( $this->show_all() ) {
+            return "";
+        }
+        
         $offset = $this->get( 'number' ) * ( $this->get( 'paged', 1 ) - 1 );
         return apply_filters( 'charitable_query_offset', "OFFSET $offset" , $this );
     }
@@ -501,6 +509,17 @@ abstract class Charitable_Query implements Iterator {
      */
     public function add_parameters( $parameters ) {
         $this->parameters = array_merge( $this->parameters, $parameters );
+    }
+
+    /**
+     * Whether to show all results. 
+     *
+     * @return  boolean
+     * @access  public
+     * @since   1.1.0
+     */
+    public function show_all() {
+        return -1 == $this->get( 'number' );
     }
 
     /**

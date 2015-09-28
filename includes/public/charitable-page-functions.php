@@ -225,7 +225,6 @@ function charitable_is_campaign_widget_page( $ret = false, $args = array()  ) {
 
 add_filter( 'charitable_is_page_campaign_widget_page', 'charitable_is_campaign_widget_page', 2, 2 );
 
-
 /**
  * Checks whether the current request is for the donation receipt page.
  *
@@ -423,6 +422,35 @@ function charitable_is_profile_page( $ret = false ) {
 }
 
 add_filter( 'charitable_is_page_profile_page', 'charitable_is_profile_page', 2 );
+
+/**
+ * Verifies whether the current user can access the donation receipt. 
+ *
+ * @param   Charitable_Donation $donation
+ * @return  boolean
+ * @since   1.1.2
+ */
+function charitable_user_can_access_receipt( Charitable_Donation $donation ) {
+    /* If the donation key is stored in the session, the user can access this receipt */
+    if ( charitable_get_session()->has_donation_key( $donation->get_donation_key() ) ) {
+        return true;
+    }
+
+    if ( ! is_user_logged_in() ) {
+        return false;
+    }   
+
+    /* Retrieve the donor and current logged in user */
+    $donor = $donation->get_donor();
+    $user = wp_get_current_user();
+
+    /* Make sure they match */
+    if ( $donor->ID ) {
+        return $donor->ID == $user->ID;
+    }
+
+    return $donor->get_email() == $user->user_email;
+}
 
 /**
  * Returns the URL to which the user should be redirected after signing on or registering an account. 

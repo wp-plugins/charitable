@@ -131,14 +131,14 @@ class Charitable_Email_Donation_Receipt extends Charitable_Email {
     protected function get_default_body() {
         ob_start();
 ?>
-        Dear [charitable_email show=donor_first_name],
+Dear [charitable_email show=donor_first_name],
 
-        Thank you so much for your generous donation.
+Thank you so much for your generous donation.
 
-        <strong>Your Receipt</strong>
-        [charitable_email show=donation_summary]
+<strong>Your Receipt</strong>
+[charitable_email show=donation_summary]
 
-        With thanks, [charitable_email show=site_name]
+With thanks, [charitable_email show=site_name]
 <?php
         $body = ob_get_clean();
 

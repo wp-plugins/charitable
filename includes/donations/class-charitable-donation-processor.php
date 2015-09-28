@@ -322,7 +322,9 @@ class Charitable_Donation_Processor {
 
         $this->save_donation_meta( $donation_id );             
 
-        $this->update_donation_log( $donation_id, __( 'Donation created.', 'charitable' ) ); 
+        $this->update_donation_log( $donation_id, __( 'Donation created.', 'charitable' ) );
+
+        charitable_get_session()->add_donation_key( $this->get_donation_data_value( 'donation_key' ) );
 
         /**
          * @hook charitable_after_save_donation

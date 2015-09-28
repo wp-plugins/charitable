@@ -8,6 +8,7 @@
 
 $widget_title = apply_filters( 'widget_title', $view_args[ 'title' ] );
 $campaigns_count = Charitable_Campaigns::query( array( 'posts_per_page' => -1, 'fields' => 'ids' ) )->found_posts;
+$campaigns_text = $campaigns_count == 1 ? __( 'Campaign', 'charitable' ) : __( 'Campaigns', 'charitable' );
 
 echo $view_args[ 'before_widget' ];
 
@@ -18,7 +19,7 @@ endif;
 ?>
 <ul class="donation-stats">
     <li>
-        <?php printf( '<span class="figure">%d</span> %s', $campaigns_count, _n( 'Campaign', 'Campaigns', $campaigns_count, 'charitable' ) ) ?>
+        <?php printf( '<span class="figure">%d</span> %s', $campaigns_count, $campaigns_text ) ?>
     </li>
     <li>                
         <?php printf( '<span class="figure">%s</span> %s', charitable_get_currency_helper()->get_monetary_amount( charitable_get_table( 'campaign_donations' )->get_total(), 0 ), __( 'Donated', 'charitable' ) ) ?>

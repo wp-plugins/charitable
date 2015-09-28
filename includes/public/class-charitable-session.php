@@ -109,7 +109,11 @@ class Charitable_Session extends Charitable_Start_Object {
 	 * @since 	1.0.0
 	 */
 	public function set_session_length() {
-		return ( 30 * 60 * 24 );
+		if ( ! defined( 'DAY_IN_SECONDS' ) ) {
+			define( 'DAY_IN_SECONDS', 86400 );
+		}
+
+		return DAY_IN_SECONDS;
 	}
 
 	/**
@@ -120,7 +124,11 @@ class Charitable_Session extends Charitable_Start_Object {
 	 * @since 	1.0.0
 	 */
 	public function set_session_expiration_variant_length() {
-		return ( 30 * 60 * 23 );
+		if ( ! defined( 'HOUR_IN_SECONDS' ) ) {
+			define( 'HOUR_IN_SECONDS', 3600 );
+		}
+
+		return HOUR_IN_SECONDS * 23;
 	}
 
 	/**
@@ -171,6 +179,44 @@ class Charitable_Session extends Charitable_Start_Object {
 	public function get_donation_by_campaign( $campaign_id ) {
 		$donations = $this->get( 'donations' );
 		return isset( $donations[ $campaign_id ] ) ? $donations[ $campaign_id ] : false;
+	}
+
+	/**
+	 * Store the donation key in the session, to ensure the user can access their receipt. 
+	 *
+	 * @param 	string $donation_key
+	 * @return  void
+	 * @access  public
+	 * @since   1.1.2
+	 */
+	public function add_donation_key( $donation_key ) {
+		$keys = $this->get( 'donation-keys' );
+
+		if ( ! $keys ) {
+			$keys = array();
+		}
+
+		$keys[] = $donation_key;
+
+		$this->set( 'donation-keys', $keys );
+	}
+
+	/**
+	 * Checks whether the donation key is stored in the session. 
+	 *
+	 * @param 	string $donation_key
+	 * @return  boolean
+	 * @access  public
+	 * @since   1.0.0
+	 */
+	public function has_donation_key( $donation_key ) {
+		$keys = $this->get( 'donation-keys' );
+
+		if ( ! $keys ) {
+			return false;
+		}
+
+		return in_array( $donation_key, $keys );
 	}
 
 	/**

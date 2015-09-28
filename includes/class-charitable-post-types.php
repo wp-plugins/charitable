@@ -285,8 +285,8 @@ final class Charitable_Post_Types extends Charitable_Start_Object {
 	 * @since 	1.0.0
 	 */
 	public function add_endpoints() {
-		add_rewrite_endpoint( 'donate', EP_ALL );
-		add_rewrite_endpoint( 'widget', EP_ALL );
+		add_rewrite_endpoint( 'donate', EP_PERMALINK );
+		add_rewrite_endpoint( 'widget', EP_PERMALINK );
 		add_rewrite_endpoint( 'donation_receipt', EP_ROOT );
 	}
 

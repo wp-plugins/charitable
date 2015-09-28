@@ -26,6 +26,13 @@ class Charitable_Email_New_Donation extends Charitable_Email {
     CONST ID = 'new_donation';
 
     /**
+     * @var     boolean Whether the email allows you to define the email recipients.
+     * @access  protected
+     * @since   1.1.0
+     */
+    protected $has_recipient_field = true;
+
+    /**
      * @var     string[] Array of supported object types (campaigns, donations, donors, etc).
      * @access  protected
      * @since   1.0.0
@@ -127,10 +134,10 @@ class Charitable_Email_New_Donation extends Charitable_Email {
     protected function get_default_body() {
         ob_start();
 ?>
-        [charitable_email show=donor] has just made a donation!
-        
-        <strong>Summary</strong>
-        [charitable_email show=donation_summary]
+[charitable_email show=donor] has just made a donation!
+
+<strong>Summary</strong>
+[charitable_email show=donation_summary]
 <?php
         $body = ob_get_clean();
 
