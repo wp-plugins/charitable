@@ -337,7 +337,6 @@ class Charitable_Donation_Form extends Charitable_Form implements Charitable_Don
         $has_gateway_fields = false;
 
         foreach ( $gateways_helper->get_active_gateways() as $gateway_id => $gateway_class ) {
-
             $gateway = new $gateway_class;
             $gateway_fields = apply_filters( 'charitable_donation_form_gateway_fields', array(), $gateway );
             $gateways[ $gateway_id ] = array(

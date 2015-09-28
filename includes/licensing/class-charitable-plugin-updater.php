@@ -36,8 +36,7 @@ class Charitable_Plugin_Updater {
         $this->version  = $_api_data['version'];
 
         // Set up hooks.
-        $this->init();
-        add_action( 'admin_init', array( $this, 'show_changelog' ) );
+        $this->init();        
     }
 
     /**
@@ -48,10 +47,9 @@ class Charitable_Plugin_Updater {
      * @return void
      */
     public function init() {
-
         add_filter( 'pre_set_site_transient_update_plugins', array( $this, 'check_update' ) );
         add_filter( 'plugins_api', array( $this, 'plugins_api_filter' ), 10, 3 );
-
+        add_action( 'admin_init', array( $this, 'show_changelog' ) );
         add_action( 'after_plugin_row_' . $this->name, array( $this, 'show_update_notification' ), 10, 2 );
     }
 
@@ -69,7 +67,6 @@ class Charitable_Plugin_Updater {
      * @return array Modified update array with custom plugin data.
      */
     function check_update( $_transient_data ) {
-
         global $pagenow;
 
         if( ! is_object( $_transient_data ) ) {

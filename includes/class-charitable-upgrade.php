@@ -42,7 +42,9 @@ class Charitable_Upgrade {
 	 * @access 	protected
 	 */
 	protected $upgrade_actions = array(
-		'1.0.1' => 'upgrade_1_0_1'
+		'1.0.1' => 'flush_permalinks', 
+		'1.1.0' => 'upgrade_1_1_0', 
+		'1.1.3' => 'flush_permalinks'
 	);
 
 	/**
@@ -173,16 +175,29 @@ class Charitable_Upgrade {
 	}
 
 	/**
-	 * Upgrade to version 1.0.1.
+	 * This just flushes the permalinks on the `init` hook. 
 	 *
-	 * This just flushes the permalinks, since 1.0.0 did not correctly flush permalinks after installation. 
+	 * Called by 1.0.1 and 1.1.3 update scripts. 
 	 *
 	 * @return  void
 	 * @access  public
-	 * @since   1.0.0
+	 * @since   1.1.3
 	 */
-	public function upgrade_1_0_1() {
+	public function flush_permalinks() {
 		add_action( 'init', 'flush_rewrite_rules' );
+	}
+
+	/**
+	 * Upgrade to version 1.1.0.
+	 *
+	 * This sets up the daily scheduled event.  
+	 *
+	 * @return  void
+	 * @access  public
+	 * @since   1.1.0
+	 */
+	public function upgrade_1_1_0() {
+		Charitable_Cron::schedule_events();
 	}
 }
 
