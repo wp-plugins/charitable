@@ -139,7 +139,7 @@ class Charitable_User extends WP_User {
     public function get_donor() {    
         if ( ! $this->is_logged_in() && ! isset( $this->donor_id ) ) {
             return null;
-        } 
+        }
 
         if ( isset( $this->donor_id ) ) {
             $donor = wp_cache_get( $this->donor_id, 'donors' );
@@ -201,6 +201,10 @@ class Charitable_User extends WP_User {
         }        
         else {
             $name = $this->display_name;
+        }
+
+        if ( ! $name ) {
+            $name = '';
         }
         
         return apply_filters( 'charitable_user_name', $name, $this );

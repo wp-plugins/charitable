@@ -348,6 +348,9 @@ class Charitable_Donation_Form extends Charitable_Form implements Charitable_Don
 
         }
 
+        // echo '<pre>'; var_dump( $gateways ); echo '</pre>';
+        // die;
+
         /* Add the payment section if there are gateway fields to be filled out. */
         if ( $has_gateway_fields || count( $gateways ) > 1 ) {
 
@@ -453,7 +456,9 @@ class Charitable_Donation_Form extends Charitable_Form implements Charitable_Don
             return $fields;
         }
 
-        $fields[ 'gateway' ] = key( $gateways );
+        $gateway_keys = array_keys( $gateways );    
+
+        $fields[ 'gateway' ] = $gateway_keys[ 0 ];
 
         return $fields;
     }
