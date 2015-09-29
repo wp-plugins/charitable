@@ -126,7 +126,15 @@ class Charitable_Gateways extends Charitable_Start_Object {
 	 * @since 	1.0.0
 	 */
 	public function get_active_gateways() {
-		return charitable_get_option( 'active_gateways', array() );
+		$active_gateways = charitable_get_option( 'active_gateways', array() );
+
+		foreach ( $active_gateways as $gateway_id => $gateway_class ) {
+			if ( ! class_exists( $gateway_class ) ) {
+				unset( $active_gateways[ $gateway_id ] );
+			}
+		}
+
+		return $active_gateways;
 	}
 
 	/**

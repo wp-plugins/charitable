@@ -337,7 +337,6 @@ class Charitable_Donation_Form extends Charitable_Form implements Charitable_Don
         $has_gateway_fields = false;
 
         foreach ( $gateways_helper->get_active_gateways() as $gateway_id => $gateway_class ) {
-
             $gateway = new $gateway_class;
             $gateway_fields = apply_filters( 'charitable_donation_form_gateway_fields', array(), $gateway );
             $gateways[ $gateway_id ] = array(
@@ -348,6 +347,9 @@ class Charitable_Donation_Form extends Charitable_Form implements Charitable_Don
             $has_gateway_fields = $has_gateway_fields || ! empty( $gateway_fields );
 
         }
+
+        // echo '<pre>'; var_dump( $gateways ); echo '</pre>';
+        // die;
 
         /* Add the payment section if there are gateway fields to be filled out. */
         if ( $has_gateway_fields || count( $gateways ) > 1 ) {
@@ -454,7 +456,9 @@ class Charitable_Donation_Form extends Charitable_Form implements Charitable_Don
             return $fields;
         }
 
-        $fields[ 'gateway' ] = key( $gateways );
+        $gateway_keys = array_keys( $gateways );    
+
+        $fields[ 'gateway' ] = $gateway_keys[ 0 ];
 
         return $fields;
     }
