@@ -31,3 +31,14 @@ function charitable_get_currency_helper() {
 function charitable_get_currency() {
     return charitable_get_option( 'currency', 'AUD' );
 }
+
+/**
+ * Formats the monetary amount. 
+ * 
+ * @param   string $amount
+ * @return  string
+ * @since   1.1.5
+ */
+function charitable_format_money( $amount ) {
+    return charitable_get_currency_helper()->get_monetary_amount( $amount );
+}

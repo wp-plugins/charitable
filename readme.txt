@@ -4,7 +4,7 @@ Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=paypa
 Tags: donations, donate, donation plugin, fundraising, fundraising plugin, non-profit, non-profits, charity, churches, commerce, crowdfunding, paypal donations, paypal, stripe, stripe donations, campaigns, gifts, giving, wordpress fundraising, wordpress donations, wordpress donation plugin
 Requires at least: 4.1
 Tested up to: 4.3.1
-Stable tag: 1.1.4
+Stable tag: 1.1.5
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -93,6 +93,9 @@ You can post in the [support forum](https://wordpress.org/support/plugin/charita
 6. Setting up Charitable: The Email settings area. 
 
 == Changelog ==
+
+= 1.1.5 = 
+* Fixes a bug that allowed people to make a donation without entering required details, or with an amount of $0 or less.
 
 = 1.1.4 = 
 * Fixes a critical bug that resulted in PayPal donations not working if you didn't have any other gateways installed.
