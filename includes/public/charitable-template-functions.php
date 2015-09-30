@@ -393,15 +393,23 @@ if ( ! function_exists( 'charitable_template_donation_receipt_content' ) ) :
         if ( ! charitable_is_page( 'donation_receipt_page' ) ) {
             return $content;
         }
-            
-        $donation = charitable_get_current_donation();
-        
+
+        $donation = charitable_get_current_donation();        
+
         if ( ! $donation ) {
             return $content;
         }
 
-        ob_start();            
-                
+        ob_start();
+
+        if ( ! charitable_user_can_access_receipt( $donation ) ) {
+
+            charitable_template( 'donation-receipt/not-authorized.php', array( 'content' => $content ) );        
+
+            return ob_get_clean();
+
+        }
+        
         charitable_template( 'content-donation-receipt.php', array( 'content' => $content, 'donation' => $donation ) );        
 
         $content = ob_get_clean();

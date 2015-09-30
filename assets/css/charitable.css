@@ -160,6 +160,7 @@
     #charitable-donation-form .donation-amounts:after {
       clear: both; }
     #charitable-donation-form .donation-amounts .donation-amount {
+      position: relative;
       float: left;
       width: 49%;
       margin: 0 2% 0.5em 0;
@@ -167,14 +168,17 @@
       border: 1px solid #ddd;
       background-color: transparent;
       cursor: pointer;
-      list-style: none; }
+      list-style: none;
+      z-index: 1; }
       #charitable-donation-form .donation-amounts .donation-amount .amount {
         font-weight: bolder; }
       #charitable-donation-form .donation-amounts .donation-amount:nth-child(2n+2) {
         margin-right: 0; }
       #charitable-donation-form .donation-amounts .donation-amount input[type=radio] {
+        position: relative;
         margin: 0 6px 0 0;
-        vertical-align: middle; }
+        vertical-align: middle;
+        z-index: -1; }
     #charitable-donation-form .donation-amounts .donation-amount.selected {
       color: #fff;
       background-color: #f89d35;

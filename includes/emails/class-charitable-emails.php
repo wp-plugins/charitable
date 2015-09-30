@@ -61,13 +61,7 @@ class Charitable_Emails extends Charitable_Start_Object {
         add_action( 'charitable_disable_email', array( $this, 'handle_email_settings_request' ) );
         add_action( 'charitable_before_send_email', array( $this, 'set_current_email' ) );
         add_action( 'charitable_before_preview_email', array( $this, 'set_current_email' ) );
-        add_filter( 'charitable_settings_fields_emails_email', array( $this, 'register_email_settings' ), 10, 2 );
-
-        /* Hooks to send emails on certain actions. */
-        add_action( 'charitable_after_add_donation', array( 'Charitable_Email_Donation_Receipt', 'send_with_donation_id' ) );
-        add_action( 'charitable_after_update_donation', array( 'Charitable_Email_Donation_Receipt', 'send_with_donation_id' ) );
-        add_action( 'charitable_after_add_donation', array( 'Charitable_Email_New_Donation', 'send_with_donation_id' ) );
-        add_action( 'charitable_after_update_donation', array( 'Charitable_Email_New_Donation', 'send_with_donation_id' ) );
+        add_filter( 'charitable_settings_fields_emails_email', array( $this, 'register_email_settings' ), 10, 2 );        
 
         /* Register email shortcode */
         add_shortcode( 'charitable_email', array( $this, 'email_shortcode' ) );
@@ -86,7 +80,8 @@ class Charitable_Emails extends Charitable_Start_Object {
     public function register_emails() {
         $this->emails = apply_filters( 'charitable_emails', array(
             'new_donation' => 'Charitable_Email_New_Donation',
-            'donation_receipt' => 'Charitable_Email_Donation_Receipt'
+            'donation_receipt' => 'Charitable_Email_Donation_Receipt', 
+            'campaign_end' => 'Charitable_Email_Campaign_End'
         ) );
 
         return $this->emails;
@@ -215,7 +210,7 @@ class Charitable_Emails extends Charitable_Start_Object {
         if ( ! isset( $args[ 'show' ] ) ) {
             return '';
         }
-
+        
         return $this->current_email->get_value( $args[ 'show' ], $args );
     }
 

@@ -49,7 +49,7 @@ class Charitable_User extends WP_User {
     /**
      * Create object using a donor ID. 
      *
-     * @param   int     $donor_id
+     * @param   int $donor_id
      * @return  Charitable_user
      * @access  public
      * @static
@@ -139,7 +139,7 @@ class Charitable_User extends WP_User {
     public function get_donor() {    
         if ( ! $this->is_logged_in() && ! isset( $this->donor_id ) ) {
             return null;
-        } 
+        }
 
         if ( isset( $this->donor_id ) ) {
             $donor = wp_cache_get( $this->donor_id, 'donors' );
@@ -202,7 +202,47 @@ class Charitable_User extends WP_User {
         else {
             $name = $this->display_name;
         }
+
+        if ( ! $name ) {
+            $name = '';
+        }
+        
         return apply_filters( 'charitable_user_name', $name, $this );
+    }
+
+    /**
+     * Returns the first name of the user.
+     *
+     * @return  string
+     * @access  public
+     * @since   1.1.0
+     */
+    public function get_first_name() {
+        if ( $this->is_donor() && $this->get_donor()->first_name ) {
+            $name = $this->get_donor()->first_name;
+        }        
+        else {
+            $name = $this->first_name;
+        }
+
+        return apply_filters( 'charitable_user_first_name', $name, $this );
+    }
+
+    /**
+     * Returns the last name of the user.
+     *
+     * @return  string
+     * @access  public
+     * @since   1.1.0
+     */
+    public function get_last_name() {
+        if ( $this->is_donor() && $this->get_donor()->last_name ) {
+            $name = $this->get_donor()->last_name;
+        }        
+        else {
+            $name = $this->last_name;
+        }
+        return apply_filters( 'charitable_user_last_name', $name, $this );
     }
 
     /**
@@ -342,7 +382,9 @@ class Charitable_User extends WP_User {
             return get_avatar( $this->ID, $size );
         }
 
-        $attachment_src = wp_get_attachment_image_src( $avatar_attachment_id, array( $size, $size ) );
+        $img_size = apply_filters( 'charitable_user_avatar_media_size', array( $size, $size ), $size );
+
+        $attachment_src = wp_get_attachment_image_src( $avatar_attachment_id, $img_size );
 
         /* No image for the given attachment ID? Fall back to the gravatar. */
         if ( ! $attachment_src ) {
@@ -626,7 +668,7 @@ class Charitable_User extends WP_User {
 
             if ( isset( $submitted[ $field ] ) ) {
 
-                $meta_key = array_key_exists( $field, $mapped_keys ) ? $mapped_keys[ $field ] : $field;
+                $meta_key = array_key_exists( $field, $mapped_keys ) ? $mapped_keys[ $field ] : $field;                
 
                 $meta_value = sanitize_meta( $meta_key, $submitted[ $field ], 'user' );
 
@@ -640,7 +682,7 @@ class Charitable_User extends WP_User {
 
         return $updated;
     }
-
+    
     /**
      * Automatically sign on user after registration. 
      *
@@ -687,7 +729,8 @@ class Charitable_User extends WP_User {
             'postcode'      => 'donor_postcode',
             'zip'           => 'donor_postcode',
             'country'       => 'donor_country',
-            'phone'         => 'donor_phone',
+            'phone'         => 'donor_phone', 
+            'user_description' => 'description'
         ) );
     }
 
