@@ -54,7 +54,7 @@ Charitable has been designed to work with any well-coded theme, including the de
 
 One size does *not* fit all. That's why we made Charitable an extendable platform. 
 
-* **[Ambassadors](https://wpcharitable.com/extensions/charitable-ambassadors?utm_source=readme&utm_medium=description_tab&utm_content=extensions&utm_campaign=plugin_page_referrals) - Add peer-to-peer fundraising or crowdfunding to your website.
+* **[Ambassadors](https://wpcharitable.com/extensions/charitable-ambassadors?utm_source=readme&utm_medium=description_tab&utm_content=extensions&utm_campaign=plugin_page_referrals)** - Add peer-to-peer fundraising or crowdfunding to your website.
 * **[Stripe](https://wpcharitable.com/extensions/charitable-stripe?utm_source=readme&utm_medium=description_tab&utm_content=extensions&utm_campaign=plugin_page_referrals)** - Accept credit card donations on your website.
 * **[Anonymous Donations](https://wpcharitable.com/extensions/charitable-anonymous-donations?utm_source=readme&utm_medium=description_tab&utm_content=extensions&utm_campaign=plugin_page_referrals)** - Allow people to make donations anonymously.
 * **[User Avatars](https://wpcharitable.com/extensions/charitable-user-avatar?utm_source=readme&utm_medium=description_tab&utm_content=extensions&utm_campaign=plugin_page_referrals)** - Let your donors upload their own profile photo to your site, instead of using their Gravatar profile.
